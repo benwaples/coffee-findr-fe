@@ -30,3 +30,73 @@ export function fetchCoffeeShops(location) {
     }
   }
 }
+
+export function fetchFavorites() {
+  const TOKEN = localStorage.getItem('TOKEN');
+
+  try {
+    return request
+              .get(`${URL}/api/favorites`)
+              .set('Authorization', TOKEN)
+  } catch (e) {
+    throw {
+      error: e.message
+    }
+  }
+}
+
+export function fetchFavoriteById(id) {
+  const TOKEN = localStorage.getItem('TOKEN');
+
+  try {
+    return request
+              .get(`${URL}/api/favorites/${id}`)
+              .set('Authorization', TOKEN)
+  } catch (e) {
+    throw {
+      error: e.message
+    }
+  }
+}
+
+export function deleteFavorite(id) {
+  const TOKEN = localStorage.getItem('TOKEN');
+
+  try {
+    return request
+              .delete(`${URL}/api/favorites/${id}`)
+              .set('Authorization', TOKEN)
+  } catch (e) {
+    throw {
+      error: e.message
+    }
+  }
+}
+
+export function editFavorite(id, notes) {
+  const TOKEN = localStorage.getItem('TOKEN');
+
+  try {
+    return request
+              .put(`${URL}/api/favorites/${id}`, notes)
+              .set('Authorization', TOKEN)
+  } catch (e) {
+    throw {
+      error: e.message
+    }
+  }
+}
+
+export function addToFavorites(favorite) {
+  const TOKEN = localStorage.getItem('TOKEN');
+
+  try {
+    return request
+              .post(`${URL}/api/favorites`, favorite)
+              .set('Authorization', TOKEN)
+  } catch (e) {
+    throw {
+      error: e.message
+    }
+  }
+}

@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import AuthPage from './Auth/AuthPage.js'
 import CoffeeList from './CoffeeList/CoffeeList';
+import FavoritesPage from './Favorites/FavoritesPage';
 
 export default class App extends Component {
 
@@ -53,6 +54,12 @@ export default class App extends Component {
                   path="/CoffeeList"
                   exact
                   render={(routerProps) => <CoffeeList
+                    {...routerProps} />}
+              />
+              <Route
+                  path="/Favorites"
+                  exact
+                  render={(routerProps) => <FavoritesPage
                     {...routerProps} />}
               />
           </Switch>

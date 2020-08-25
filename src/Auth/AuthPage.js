@@ -27,7 +27,6 @@ export default class AuthPage extends Component {
 
 
     this.props.auth(userData.body.token)
-    //change this
     this.props.history.push('/coffeeList')
   }
 
@@ -40,8 +39,7 @@ export default class AuthPage extends Component {
     })
 
     this.props.auth(userData.body.token)
-    // change this
-    // this.props.history.push('/coffeeList')
+    this.props.history.push('/coffeeList')
   }
 
   displaySignIn = () => {

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { fetchCoffeeShops } from '../coffee-api.js'
+import { fetchCoffeeShops, addToFavorites } from '../coffee-api.js'
 
 export default class CoffeeList extends Component {
     state = {
         location: '',
-        filteredCoffeeShops: [],
+        filteredCoffeeShops: []
     }
 
     handleSubmit = async (e) => {
@@ -25,6 +25,11 @@ export default class CoffeeList extends Component {
 
             console.log(this.state.filteredCoffeeShops)
     }
+
+    handleAddFavorite = async (favorite) => {
+        const newFavorite = await addToFavorites(favorite);
+        console.log(newFavorite);
+    }
         
         
     render() {
@@ -44,9 +49,10 @@ export default class CoffeeList extends Component {
                 <ul className="shopList">
                     {
                         this.state.filteredCoffeeShops.map((coffeeShop) => {
-                            return <li className="coffeeShopItem">
+                            return <li className="coffeeShopItem" key={coffeeShop.biz_id}>
                             {coffeeShop.title}
                             <img src={coffeeShop.img} alt="coffeeShop" width="200" />
+                            <button onClick={() => this.handleAddFavorite(coffeeShop)}>Add to Favorites</button>
                             </li>
                         })
                     }
@@ -56,6 +62,3 @@ export default class CoffeeList extends Component {
         )
     }
 }
-                            
-
-
