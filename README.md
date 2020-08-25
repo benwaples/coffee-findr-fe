@@ -40,15 +40,16 @@ receive a location and get a list of coffee shops in that given location
 ### post('/api/favorites')
 add a users favorites coffee shops
 
-### put('/api/favorites/:id')
+### put('/api/favorites/:id') 
 edit a users notes on a specific coffee shops
 
 ### delete('/api/favorites/:id')
 delete a coffee shop from a users list of favorites coffee shops
 
 ## Clearly Defined database schema
+``` javascript
 {
-biz_id: 'YaUGYnfBjq1V-sI0BSokSQ-uniqueId',
+biz_id: 'YaUGYnfBjq1V-sI0BSokSQ-uniqueId',  
 title: 'Coffee Shop',
 img: 'http://placekitten.com/200/300',
 address: 'asdfsdf',
@@ -60,6 +61,7 @@ lat: 'string',
 lon: 'string',
 city_lat: 'string',
 city_lon: 'string'
-}
+} 
+```
 
 
