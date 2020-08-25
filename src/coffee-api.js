@@ -19,3 +19,14 @@ export function signIn(userData) {
     throw { error: e.message }
   }
 }
+
+
+export function fetchCoffeeShops(location) {
+  try {
+    return request.get(`${URL}/coffeeList?location=${location}`)
+  } catch (e) {
+    throw {
+      error: e.message
+    }
+  }
+}

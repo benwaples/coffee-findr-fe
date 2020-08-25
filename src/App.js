@@ -6,6 +6,7 @@ import {
   Switch,
 } from 'react-router-dom';
 import AuthPage from './Auth/AuthPage.js'
+import CoffeeList from './CoffeeList/CoffeeList';
 
 export default class App extends Component {
 
@@ -47,6 +48,12 @@ export default class App extends Component {
                   render={(routerProps) => <AuthPage 
                     auth={this.handleAuth}
                     {...routerProps} />} 
+              />
+              <Route
+                  path="/CoffeeList"
+                  exact
+                  render={(routerProps) => <CoffeeList
+                    {...routerProps} />}
               />
           </Switch>
       </Router>
