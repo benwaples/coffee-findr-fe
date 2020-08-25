@@ -1,68 +1,65 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Details:
 
-## Available Scripts
+## Name of the Project: 
+No Stars, No Bucks
 
-In the project directory, you can run:
+## Names of the Team Members:
+Adrian Simental
+Nate Kruckenberg
+Joel Perez
+Brian McPhillips
+Ben Waples
 
-### `npm start`
+## Description of The Project:
+An app that helps you find good coffee in a given location. Starbucks is always filtered out of the results.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+With a page dedicated to educating the user on what coffee drinks are what.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Problem Domain:
+It is hard to find good coffee in new places, especially when you don't want to drink coffee from chain coffee shops. We also wanted a place to keep track of our favorite coffee shops with notes about what drinks are good there. 
 
-### `npm test`
+## List of Libraries and packages we used:
+React Router
+Superagent
+Express
+Supertest
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Instructions for users to use:
+link to netlify
 
-### `npm run build`
+## Clearly Defined Endpoints: 
+### get('/api/favorites')
+get all users favorites
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### get(/api/favorites/:id)
+get more info on a specific favorites
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### get(/api/coffeeList)
+receive a location and get a list of coffee shops in that given location
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### post('/api/favorites')
+add a users favorites coffee shops
 
-### `npm run eject`
+### put('/api/favorites/:id')
+edit a users notes on a specific coffee shops
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### delete('/api/favorites/:id')
+delete a coffee shop from a users list of favorites coffee shops
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Clearly Defined database schema
+{
+biz_id: 'YaUGYnfBjq1V-sI0BSokSQ-uniqueId',
+title: 'Coffee Shop',
+img: 'http://placekitten.com/200/300',
+address: 'asdfsdf',
+is_closed: false,
+rating: 5.0,
+notes: 'your notes go here',
+yelp_url: 'https://www.yelp.com/biz/ovation-coffee-and-tea-portland?adjust_creative=1kvmc9F-97bT0bHKFMMEUQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=1kvmc9F-97bT0bHKFMMEUQ',
+lat: 'string',
+lon: 'string',
+city_lat: 'string',
+city_lon: 'string'
+}
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
