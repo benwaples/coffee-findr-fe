@@ -1,5 +1,18 @@
 import React, { Component } from 'react'
 import { fetchCoffeeShops, addToFavorites } from '../coffee-api.js'
+import ReactNotification from 'react-notifications-component'
+import { store } from 'react-notifications-component'
+import 'react-notifications-component/dist/theme.css'
+
+const notification = {    
+    title: "Wonderful!",    
+    message: "Configurable",    
+    type: "success",    
+    insert: "top",    
+    container: "top-right",    
+    animationIn: ["animated", "fadeIn"],    
+    animationOut: ["animated", "fadeOut"]
+    };
 
 export default class CoffeeList extends Component {
     state = {
@@ -9,10 +22,24 @@ export default class CoffeeList extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        
+        try {
         const data = await fetchCoffeeShops(this.state.location)
         this.setState({filteredCoffeeShops: data.body})
-        }
+    } catch(e) {
+        return store.addNotification({
+            ...notification,
+            container: 'top-right',
+            type: 'danger',
+            title: 'Oops!',
+            message: `Invalid Location`,
+            animationIn: ["animated", "fadeIn"],
+            animationOut: ["animated", "fadeOut"],
+            dismiss: {        
+                duration: 2000    
+            }
+        });
+    }
+}
    
     handleFilter = (e) => {
         const newData = this.state.filteredCoffeeShops.filter(coffeeShop => (
@@ -22,14 +49,35 @@ export default class CoffeeList extends Component {
             !coffeeShop.title.includes("Dutch Bros")
             ))
             this.setState({ filteredCoffeeShops: newData })
-
     }
 
     handleAddFavorite = async (favorite) => {
         try {
         const newFavorite = await addToFavorites(favorite);
+        store.addNotification({
+            ...notification,
+            container: 'top-right',
+            type: 'success',
+            message: `${favorite.title} has been added to Your Favorites!`,
+            animationIn: ["animated", "fadeIn"],
+            animationOut: ["animated", "fadeOut"],
+            dismiss: {        
+                duration: 2000    
+            }
+        });
         } catch(e) {
-            return console.log({ error: e.response.body.error })
+            return store.addNotification({
+                ...notification,
+                container: 'top-right',
+                type: 'danger',
+                title: 'Danger, watch yo self',
+                message: `${favorite.title} is already in Your Favorites List!`,
+                animationIn: ["animated", "fadeIn"],
+                animationOut: ["animated", "fadeOut"],
+                dismiss: {        
+                    duration: 2000    
+                }
+            });
         }
     }
         
@@ -37,6 +85,7 @@ export default class CoffeeList extends Component {
     render() {
         return (
             <>
+                <ReactNotification />
                 <div className="sideBar">
                     <form onSubmit={this.handleSubmit}>
                     <input onChange={e => this.setState({ location: e.target.value })} value={this.state.location} type="text" placeholder="Enter Location" required />

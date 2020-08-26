@@ -5,6 +5,19 @@ import {
 } from '../coffee-api.js'
 import DisplaySignIn from './DisplaySignIn.js'
 import DisplaySignUp from './DisplaySignUp.js'
+import ReactNotification from 'react-notifications-component'
+import { store } from 'react-notifications-component'
+import 'react-notifications-component/dist/theme.css'
+
+const notification = {    
+  title: "Error!",    
+  message: "Configurable",    
+  type: "success",    
+  insert: "top",    
+  container: "top-right",    
+  animationIn: ["animated", "fadeIn"],    
+  animationOut: ["animated", "fadeOut"]
+  };
 
 export default class AuthPage extends Component {
 
@@ -30,7 +43,17 @@ export default class AuthPage extends Component {
     this.props.auth(userData.body.token)
     this.props.history.push('/coffeeList')
     } catch(e) {
-      return console.log({ error: e.message })
+      return store.addNotification({
+        ...notification,
+        container: 'top-right',
+        type: 'warning',
+        message: `${e.response.body.error}`,
+        animationIn: ["animated", "fadeIn"],
+        animationOut: ["animated", "fadeOut"],
+        dismiss: {        
+            duration: 2000    
+        }
+    });
     }
   }
 
@@ -46,7 +69,17 @@ export default class AuthPage extends Component {
     this.props.auth(userData.body.token)
     this.props.history.push('/coffeeList')
   } catch(e) {
-    return console.log({ error: e.message })
+    return store.addNotification({
+      ...notification,
+      container: 'top-right',
+      type: 'warning',
+      message: `${e.response.body.error}`,
+      animationIn: ["animated", "fadeIn"],
+      animationOut: ["animated", "fadeOut"],
+      dismiss: {        
+          duration: 2000    
+      }
+  });
   }
   } 
 
@@ -77,6 +110,7 @@ export default class AuthPage extends Component {
   render() {
     return (
       <div>
+        <ReactNotification />
         <div className="center">
           <h2 onClick={this.displaySignIn}>Sign In</h2>
           {
