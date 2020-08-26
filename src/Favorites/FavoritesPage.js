@@ -38,6 +38,13 @@ export default class FavoritesPage extends Component {
         this.setState({detailFavorite: refreshPage.body, favoriteIsSelected:true, notes: refreshPage.body.notes })
         console.log(refreshPage.body);
         }
+
+        handleDelete = async (id) => {
+            const data = await deleteFavorite(id)
+            this.setState({isLoading: true})
+            const refreshPage = await fetchFavorites();
+            this.setState({ favorites: refreshPage.body, isLoading: false, detailFavorite: {}, favoriteIsSelected: false});
+            }
     
     render() {
         return (
@@ -58,7 +65,7 @@ export default class FavoritesPage extends Component {
                     !this.state.favoriteIsSelected ?
                     <PlaceHolder />
                     :
-                    <DetailedFavorite detailFavorite={this.state.detailFavorite} notes={this.state.notes} handleNoteChange={e => (this.setState({notes: e.target.value}))} handleSubmit={this.handleSubmit} />
+                    <DetailedFavorite detailFavorite={this.state.detailFavorite} notes={this.state.notes} handleNoteChange={e => (this.setState({notes: e.target.value}))} handleSubmit={this.handleSubmit} handleDelete={this.handleDelete}/>
                 }
             </div>
             </>
