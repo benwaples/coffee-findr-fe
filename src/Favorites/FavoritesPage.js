@@ -4,7 +4,6 @@ import DetailedFavorite from './DetailedFavorite.js';
 import PlaceHolder from './PlaceHolder.js';
 import ReactNotification from 'react-notifications-component'
 import { store } from 'react-notifications-component'
-import 'react-notifications-component/dist/theme.css'
 
 const notification = {    
     title: "Wonderful!",    

@@ -1,0 +1,55 @@
+body {
+  --color1: #430c05;
+  --color2: #d46f4d;
+  --color3: #ffbf66;
+  --color4: #08c5d1;
+  --color5: #00353f;
+
+  background-image: url("/newbeans.jpg");
+  background-size: cover;
+  background-position: auto;
+  background-repeat: no-repeat;
+  
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  
+}
+
+.auth {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  background-color: white;
+  width: 200px;
+  height: 350px auto;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: var(--color5);
+  color: white;
+}
+
+form, label  {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-self: center;
+  height: 250px
+}
+
+.center:hover {
+  opacity: 1;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-self: center;
+}
