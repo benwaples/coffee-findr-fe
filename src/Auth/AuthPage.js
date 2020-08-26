@@ -18,6 +18,7 @@ export default class AuthPage extends Component {
   }
 
   handleSignUp = async (e) => {
+    try {
     e.preventDefault();
 
     const userData = await signUp({
@@ -28,9 +29,13 @@ export default class AuthPage extends Component {
 
     this.props.auth(userData.body.token)
     this.props.history.push('/coffeeList')
+    } catch(e) {
+      return console.log({ error: e.message })
+    }
   }
 
   handleSignIn = async (e) => {
+    try {
     e.preventDefault();
 
     const userData = await signIn({
@@ -40,7 +45,10 @@ export default class AuthPage extends Component {
 
     this.props.auth(userData.body.token)
     this.props.history.push('/coffeeList')
+  } catch(e) {
+    return console.log({ error: e.message })
   }
+  } 
 
   displaySignIn = () => {
     this.setState({ signIn: true, signUp: false })

@@ -23,12 +23,14 @@ export default class CoffeeList extends Component {
             ))
             this.setState({ filteredCoffeeShops: newData })
 
-            console.log(this.state.filteredCoffeeShops)
     }
 
     handleAddFavorite = async (favorite) => {
+        try {
         const newFavorite = await addToFavorites(favorite);
-        console.log(newFavorite);
+        } catch(e) {
+            return console.log({ error: e.response.body.error })
+        }
     }
         
         
@@ -52,6 +54,7 @@ export default class CoffeeList extends Component {
                             return <li className="coffeeShopItem" key={coffeeShop.biz_id}>
                             {coffeeShop.title}
                             <img src={coffeeShop.img} alt="coffeeShop" width="200" />
+                            
                             <button onClick={() => this.handleAddFavorite(coffeeShop)}>Add to Favorites</button>
                             </li>
                         })
