@@ -62,7 +62,7 @@ export default class FavoritesPage extends Component {
             }
         });
         const refreshPage = await fetchFavoriteById(id) 
-        this.setState({detailFavorite: refreshPage.body, favoriteIsSelected:true, notes: refreshPage.body.notes, notes: data.body.notes })
+        this.setState({detailFavorite: refreshPage.body, favoriteIsSelected:true, notes: data.body.notes })
         } catch(e) {
             return console.log({ error: e.response.body.error })
         }   

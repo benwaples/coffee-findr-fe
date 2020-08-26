@@ -53,7 +53,7 @@ export default class CoffeeList extends Component {
 
     handleAddFavorite = async (favorite) => {
         try {
-        const newFavorite = await addToFavorites(favorite);
+        await addToFavorites(favorite);
         store.addNotification({
             ...notification,
             container: 'top-right',
