@@ -99,23 +99,28 @@ export default class FavoritesPage extends Component {
             <h2>
                 Favorites List, Player
             </h2>
-            <ul className='favoritesList'>
-                {
-                    !this.state.isLoading ?
-                    this.state.favorites.map(favorite => {
-                        return <li onClick={ () => this.handleFavoriteById(favorite.id)} key={favorite.title}>{favorite.title}</li>
-                    }) : <img src="https://media.giphy.com/media/a0G1MUBGwmBcQ/source.gif" alt="loading" />
-                }
-            </ul>
-            <div className='favoritesInfo'>
-                {
-                    !this.state.favoriteIsSelected ?
-                    <PlaceHolder />
-                    :
-                    <DetailedFavorite detailFavorite={this.state.detailFavorite} notes={this.state.notes} handleNoteChange={e => (this.setState({notes: e.target.value}))} handleSubmit={this.handleSubmit} handleDelete={this.handleDelete}/>
-                }
+            <div className="favPage">
+                <ul className='favoritesList'>
+                    {
+                        !this.state.isLoading ?
+                        this.state.favorites.map(favorite => {
+                            return <li className="favItem" onClick={ () => this.handleFavoriteById(favorite.id)} key={favorite.title}>{favorite.title} 
+                            <p>Click to see more</p>
+                            </li>
+                        }) : <img src="https://media.giphy.com/media/a0G1MUBGwmBcQ/source.gif" alt="loading" />
+                    }
+                </ul>
+                <div className='favoritesInfo'>
+                    {
+                        !this.state.favoriteIsSelected ?
+                        <PlaceHolder />
+                        :
+                        <DetailedFavorite detailFavorite={this.state.detailFavorite} notes={this.state.notes} handleNoteChange={e => (this.setState({notes: e.target.value}))} handleSubmit={this.handleSubmit} handleDelete={this.handleDelete}/>
+                    }
+                </div>
             </div>
             </>
         )
     }
 }
+ 

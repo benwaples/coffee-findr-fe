@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class Coffee101 extends Component {
+export default class AboutUs extends Component {
   render() {
     return (
       <div>
-        TOOTS
+        
       </div>
     )
   }

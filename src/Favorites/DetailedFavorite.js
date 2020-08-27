@@ -17,7 +17,7 @@ export default class DetailedFavorite extends Component {
             handleDelete
         } = this.props
         return (
-            <div>
+            <div className="detailedFav">
                 <a href={detailFavorite.yelp_url} target="_blank" rel="noopener noreferrer">
                     <h2>{detailFavorite.title}</h2>
                     <img src={detailFavorite.img} alt={detailFavorite.title} />
