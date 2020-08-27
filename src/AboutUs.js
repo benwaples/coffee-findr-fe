@@ -8,7 +8,7 @@ export default class AboutUs extends Component {
         <div className="peoples">
           <div className="left">
           <section>
-            <h3>Brain</h3>
+            <h3>Brian</h3>
             <img src="/avataaars(1).png" className="avatar" alt="Brian"/>
             <p><strong>Least Favorite Coffee Drink:</strong> Americano</p>
             <p><strong><strong>Favorite Coffee Shop:</strong></strong> Gas Station</p>
