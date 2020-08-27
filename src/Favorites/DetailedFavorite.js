@@ -17,7 +17,7 @@ export default class DetailedFavorite extends Component {
             handleDelete
         } = this.props
         return (
-            <div>
+            <div className="detailedFav">
                 <a href={detailFavorite.yelp_url} target="_blank" rel="noopener noreferrer">
                     <h2>{detailFavorite.title}</h2>
                     <img src={detailFavorite.img} alt={detailFavorite.title} />
@@ -27,8 +27,8 @@ export default class DetailedFavorite extends Component {
                     <p>Rating: {detailFavorite.rating}</p>
                     <p>Personal Notes: {detailFavorite.notes}</p>
                 <input type="text" onChange={handleNoteChange} value={notes}/>
-                <button onClick={() => handleSubmit(detailFavorite.id)} >Edit Notes</button>
-                <button onClick={() => handleDelete(detailFavorite.id)} >Delete</button>
+                <button className="editButt" onClick={() => handleSubmit(detailFavorite.id)} >Edit Notes</button>
+                <button className="deleteButt" onClick={() => handleDelete(detailFavorite.id)} >Delete</button>
             </div>
         )
     }

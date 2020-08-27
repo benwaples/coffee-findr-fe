@@ -9,6 +9,8 @@ import AuthPage from './Auth/AuthPage.js'
 import CoffeeList from './CoffeeList/CoffeeList';
 import FavoritesPage from './Favorites/FavoritesPage';
 import Header from './Header.js'
+import Footer from './Footer.js'
+import AboutUs from './AboutUs.js'
 import Coffee101 from './Coffee101/Coffee101.js'
 
 export default class App extends Component {
@@ -71,7 +73,14 @@ export default class App extends Component {
                   render={(routerProps) => <Coffee101
                     {...routerProps} />}
               />
+              <Route
+                  path="/AboutUs"
+                  exact
+                  render={(routerProps) => <AboutUs
+                    {...routerProps} />}
+              />
           </Switch>
+          {/* <Footer /> */}
       </Router>
   </div>
     )
