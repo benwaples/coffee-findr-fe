@@ -13,7 +13,8 @@ export default class DetailedFavorite extends Component {
             detailFavorite,
             handleNoteChange,
             notes,
-            handleSubmit
+            handleSubmit,
+            handleDelete
         } = this.props
         return (
             <div>
@@ -25,10 +26,9 @@ export default class DetailedFavorite extends Component {
                     <p>{detailFavorite.is_closed ? 'Is Closed' : 'Is Open'}</p>
                     <p>Rating: {detailFavorite.rating}</p>
                     <p>Personal Notes: {detailFavorite.notes}</p>
-                <button onClick={() => handleSubmit(detailFavorite.id)} >Edit Notes</button>
                 <input type="text" onChange={handleNoteChange} value={notes}/>
-               
-                
+                <button onClick={() => handleSubmit(detailFavorite.id)} >Edit Notes</button>
+                <button onClick={() => handleDelete(detailFavorite.id)} >Delete</button>
             </div>
         )
     }

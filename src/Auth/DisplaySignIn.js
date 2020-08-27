@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './auth.css';
 
 export default class DisplaySignIn extends Component {
   render() {

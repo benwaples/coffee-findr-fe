@@ -8,6 +8,7 @@ import {
 import AuthPage from './Auth/AuthPage.js'
 import CoffeeList from './CoffeeList/CoffeeList';
 import FavoritesPage from './Favorites/FavoritesPage';
+import Header from './Header.js'
 
 export default class App extends Component {
 
@@ -40,8 +41,9 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="bigDaddyDiv">
       <Router>
+        <Header />
           <Switch>
               <Route 
                   path="/" 

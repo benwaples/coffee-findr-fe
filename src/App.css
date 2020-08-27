@@ -1,3 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  --color1: #430c05;
+  --color2: #d46f4d;
+  --color3: #ffbf66;
+  --color4: #08c5d1;
+  --color5: #00353f;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  
+}
+.auth {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  background-color: white;
+  width: 200px;
+  height: 350px auto;
+  padding: 15px;
+  border-radius: 20px;
+  background-color: var(--color5);
+  color: white;
+}
+
+.bigDaddyDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .App {
   text-align: center;
 }
@@ -36,3 +76,128 @@
     transform: rotate(360deg);
   }
 }
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--color5);
+  color: white;
+  width: 100%
+}
+form, label  {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-self: center;
+  height: 250px
+}
+.center:hover {
+  opacity: 1;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-self: center;
+}
+
+.links {
+  width: 250px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color3);
+}
+
+.appName {
+  color: var(--color3)
+}
+
+.coffeeListPage {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.sideBar {
+  display: flex;
+  top: 10px;
+  position: sticky;
+  margin-top: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: var(--color1);
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+} 
+
+.shopList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.coffeeShopItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 15px;
+  margin: 10px;
+  text-align: center;
+}
+
+.coffeeShopItem li {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.coffeeShopItem img {
+  margin-bottom: 15px;
+  max-height: 100%;
+  max-width: 100%;
+  border-radius: 5px;
+  filter: saturate(130%) contrast(115%) drop-shadow(5px 5px 5px);
+}
+
+.sideBar button {
+  border-radius: 5px;
+  border: none;
+  color: var(--color2);
+  height: 30px;
+  font-weight: bold;
+}
+
+.sideBar h3 {
+  margin-top: -5px;
+  margin-bottom: -20px;
+}
+
+.sideBar input {
+  height: 30px;
+  font-size: 15px;
+}
+
+.coffeeShopItem img:hover {
+  transform: scale(1.1);
+}
+
+.coffeeShopItem button {
+  border-radius: 5px;
+  height: 30px;
+  color: white;
+  background-color: var(--color4);
+  border: none;
+  font-weight: bold;
+  font-family: 'Lato';
+  filter: saturate(130%) contrast(115%) drop-shadow(black 2px 2px 5px);
+}
+

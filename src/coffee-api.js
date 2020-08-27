@@ -1,7 +1,7 @@
 /* eslint-disable no-throw-literal */
 import request from 'superagent';
 
-const URL = 'https://no-stars-no-bucks.herokuapp.com';
+const URL = 'https://no-stars-no-bucks.herokuapp.com'
 
 
 export function signUp(userData) {
