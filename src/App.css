@@ -435,3 +435,33 @@ button {
   font-family: 'Lato';
   filter: saturate(130%) contrast(115%) drop-shadow(black 2px 2px 5px);
 }
+
+.peoples{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.peoples section {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: var(--color1);
+  margin: 20px;
+  border: 2px solid var(--color3);
+  border-radius: 30px;
+  color: white;
+  padding: 10px;
+}
+
+.middle {
+  align-self: center;
+}
+
+.avatar {
+  border-radius: 50%;
+  width: 120px;
+}
