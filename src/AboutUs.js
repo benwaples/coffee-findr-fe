@@ -44,7 +44,7 @@ export default class AboutUs extends Component {
             <img src="/adrian.png" className="avatar" alt="Adrian"/>
             <p><strong>Least Favorite Coffee Drink:</strong> Whats coffee?</p>
             <p><strong>Favorite Coffee Shop:</strong> The ones in Amsterdam </p>
-            <a href="https:/www.linkedin.com/in/adrian-simental/" rel="noopener noreferrer" target="_blank">
+            <a href="https://www.linkedin.com/in/adrian-simental/" rel="noopener noreferrer" target="_blank">
               <img src="/linkedin-icon.png" alt="linkedin" />
             </a>
           </section>
