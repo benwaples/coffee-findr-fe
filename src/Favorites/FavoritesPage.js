@@ -97,7 +97,7 @@ export default class FavoritesPage extends Component {
             <>
             <ReactNotification />
             <h2>
-                Favorites List, Player
+                Your Favorite Coffee Shops
             </h2>
             <div className="favPage">
                 <ul className='favoritesList'>

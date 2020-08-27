@@ -119,7 +119,7 @@ form, label  {
   text-transform: uppercase;
   /* display: inline-block; */
   margin: 10px 8px 10px 8px;
-  color: #CCCCCC;
+  color: black;
 }
 .auth h2:hover {
   color: #0D0D0D;
@@ -167,7 +167,7 @@ form, label  {
 }
 
 .auth button {
-  opacity: .5;
+  opacity: .7;
   width: 150px;
   height: 40px;
   margin: auto;
@@ -241,14 +241,50 @@ a {
   justify-content: space-evenly;
   padding: 15px;
   margin: 10px;
+  width: 300px;
+  height: 300px;
   text-align: center;
 }
 
-.coffeeShopItem li {
-  display: flex;
-  flex-wrap: wrap;
+.hover {
+  position: relative;
   width: 100%;
+  height: 200px;
+  float: left;
+  margin-left: 5px;
+  margin-right: 5px;
 }
+.moreInfo {
+  position: absolute;
+  border-radius: 5px;
+  bottom: 0;
+  right: 0;
+  background: var(--color2);
+  color: white;
+  margin-bottom: 5px;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 300ms ease-out;
+  -moz-transition: all 300ms ease-out;
+  -o-transition: all 300ms ease-out;
+  -ms-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  transform: translateY(30px);
+  -webkit-transform: translateY(6px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-transform: capitalize;
+}
+.hover:hover .moreInfo{
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    visibility: visible;
+    opacity: 1;
+}
+
 
 .coffeeShopItem img {
   margin-bottom: 15px;
@@ -256,6 +292,7 @@ a {
   max-width: 100%;
   border-radius: 5px;
   filter: saturate(130%) contrast(115%) drop-shadow(5px 5px 5px);
+  
 }
 
 .sideBar button {
@@ -276,13 +313,10 @@ a {
   font-size: 15px;
 }
 
-.coffeeShopItem img:hover {
-  transform: scale(1.1);
-}
-
 .coffeeShopItem button {
+  margin-top: 15px;
   border-radius: 5px;
-  height: 30px;
+  width: 150px;
   color: white;
   background-color: var(--color4);
   border: none;
@@ -330,9 +364,33 @@ a {
   color: white;
  }
  
- .detailedFav img{
+.detailedFav img{
   max-height: 600px;
   width: 400px;
+}
+
+.detailedFav input{
+  height: auto;
+  width: 100%;
+}
+
+.deleteButt {
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+  width: 80px;
+  height: 40px;
+  background-color: rgb(242, 87, 87);
+  border: none;
+}
+.editButt {
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+  width: 80px;
+  height: 40px;
+  background-color: var(--color4);
+  border: none;
 }
 
 button {
@@ -364,4 +422,16 @@ button {
   height: 70px;
   
   flex-shrink: 0
+}
+
+.directions {
+  margin-top: 15px;
+  border-radius: 5px;
+  width: 150px;
+  color: white;
+  background-color: var(--color5);
+  border: none;
+  font-weight: bold;
+  font-family: 'Lato';
+  filter: saturate(130%) contrast(115%) drop-shadow(black 2px 2px 5px);
 }

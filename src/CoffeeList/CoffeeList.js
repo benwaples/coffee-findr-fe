@@ -109,8 +109,20 @@ export default class CoffeeList extends Component {
                         this.state.filteredCoffeeShops.map((coffeeShop) => {
                             return <li className="coffeeShopItem" key={coffeeShop.biz_id}>
                             <h4>{coffeeShop.title}</h4>
-                            <img src={coffeeShop.img} alt="coffeeShop" width="250" height="250" />
-                            
+                            <div className="
+                            hover">
+                                <img src={coffeeShop.img} alt="coffeeShop"/>
+                                <div className="moreInfo">
+                                    <p>{coffeeShop.address}</p> 
+                                    <p>{coffeeShop.is_closed ? `${coffeeShop.title} is closed` : `${coffeeShop.title} is open`}</p> 
+                                    <p>Yelp Rating: {coffeeShop.rating}</p> 
+                                </div>
+                            </div>
+                            <form action="http://maps.google.com/maps" method="get" target="_blank" >
+                                <input type="hidden" name="daddr" value={coffeeShop.address} />
+                                <input className="directions" type="submit" value="Get directions" />
+                            </form>
+
                             <button onClick={() => this.handleAddFavorite(coffeeShop)}>Add to Favorites</button>
                             </li>
                         })
