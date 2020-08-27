@@ -3,6 +3,7 @@ import { fetchCoffeeShops, addToFavorites } from '../coffee-api.js'
 import ReactNotification from 'react-notifications-component'
 import { store } from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
+import '../App.css'
 
 
 const notification = {    
@@ -85,11 +86,12 @@ export default class CoffeeList extends Component {
         
     render() {
         return (
-            <>
+            <div className="coffeeListPage">
                 <ReactNotification />
                 <div className="sideBar">
                     <form onSubmit={this.handleSubmit}>
-                    <input onChange={e => this.setState({ location: e.target.value })} value={this.state.location} type="text" placeholder="Enter Location" required />
+                    <h3>Enter Location:</h3>
+                    <input onChange={e => this.setState({ location: e.target.value })} value={this.state.location} type="text" placeholder="Portland" required />
                     <select onChange={this.handleFilter}>
                         <option value="all">All Coffee Shops</option>
                         <option value="nonChain">Non-Chain Coffee Shops</option>
@@ -102,8 +104,8 @@ export default class CoffeeList extends Component {
                     {
                         this.state.filteredCoffeeShops.map((coffeeShop) => {
                             return <li className="coffeeShopItem" key={coffeeShop.biz_id}>
-                            {coffeeShop.title}
-                            <img src={coffeeShop.img} alt="coffeeShop" width="200" />
+                            <h4>{coffeeShop.title}</h4>
+                            <img src={coffeeShop.img} alt="coffeeShop" width="250" height="250" />
                             
                             <button onClick={() => this.handleAddFavorite(coffeeShop)}>Add to Favorites</button>
                             </li>
@@ -111,7 +113,7 @@ export default class CoffeeList extends Component {
                     }
                 </ul>
                 </div>
-            </>
+            </div>
         )
     }
 }
