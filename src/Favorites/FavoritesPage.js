@@ -104,7 +104,7 @@ export default class FavoritesPage extends Component {
                     !this.state.isLoading ?
                     this.state.favorites.map(favorite => {
                         return <li onClick={ () => this.handleFavoriteById(favorite.id)} key={favorite.title}>{favorite.title}</li>
-                    }) : 'Is Loading'
+                    }) : <img src="https://media.giphy.com/media/a0G1MUBGwmBcQ/source.gif" alt="loading" />
                 }
             </ul>
             <div className='favoritesInfo'>

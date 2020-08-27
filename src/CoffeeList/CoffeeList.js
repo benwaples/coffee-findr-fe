@@ -19,14 +19,17 @@ const notification = {
 export default class CoffeeList extends Component {
     state = {
         location: '',
-        filteredCoffeeShops: []
+        filteredCoffeeShops: [],
+        isLoading: false
     }
 
     handleSubmit = async (e) => {
         e.preventDefault();
         try {
+        this.setState({isLoading: true})
         const data = await fetchCoffeeShops(this.state.location)
-        this.setState({filteredCoffeeShops: data.body})
+        this.setState({filteredCoffeeShops: data.body, isLoading: false})
+        
     } catch(e) {
         return store.addNotification({
             ...notification,
@@ -102,6 +105,7 @@ export default class CoffeeList extends Component {
                 <div className="shopContainer">
                 <ul className="shopList">
                     {
+                        !this.state.isLoading ?
                         this.state.filteredCoffeeShops.map((coffeeShop) => {
                             return <li className="coffeeShopItem" key={coffeeShop.biz_id}>
                             <h4>{coffeeShop.title}</h4>
@@ -110,6 +114,8 @@ export default class CoffeeList extends Component {
                             <button onClick={() => this.handleAddFavorite(coffeeShop)}>Add to Favorites</button>
                             </li>
                         })
+                        :
+                        <img src="https://media.giphy.com/media/a0G1MUBGwmBcQ/source.gif" alt="loading" />
                     }
                 </ul>
                 </div>
