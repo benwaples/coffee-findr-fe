@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Footer from './Footer.js'
 
 export default class AboutUs extends Component {
   render() {
@@ -58,6 +59,7 @@ export default class AboutUs extends Component {
           </section>
           </div>
         </div>
+        <Footer />
       </>
     )
   }

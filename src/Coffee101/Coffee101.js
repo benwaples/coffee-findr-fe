@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import Footer from '../Footer.js'
 
 export default class Coffee101 extends Component {
     render() {
         return (
-            <div>
+            <div className="bigdaddydiv2">
                 <h1 className='brew101Header'>Brew 101</h1>
                 <h3 className='generalInfoHeader'>The Makeup of a Good Cup of Coffee</h3>
                 <div className='generalInfo'>
@@ -81,6 +82,7 @@ export default class Coffee101 extends Component {
                             <li>Pour gently into your preheated cup</li>
                     </ul>
                 </div>
+               <Footer className="coffee101footer" />
             </div>
         )
     }

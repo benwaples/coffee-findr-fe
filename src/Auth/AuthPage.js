@@ -9,6 +9,7 @@ import DisplaySignUp from './DisplaySignUp.js'
 import ReactNotification from 'react-notifications-component'
 import { store } from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
+import Footer from '../Footer.js'
 
 const notification = {    
   title: "Error!",    
@@ -110,6 +111,7 @@ export default class AuthPage extends Component {
 
   render() {
     return (
+      <div className="bigdaddydiv3">
       <div className="auth">
         <ReactNotification />
         <div className="center">
@@ -131,6 +133,8 @@ export default class AuthPage extends Component {
           }
         </div>
       </div>
+      <Footer />
+    </div>
     )
   }
 }

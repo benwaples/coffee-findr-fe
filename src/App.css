@@ -26,6 +26,7 @@ body {
   height: 350px auto;
   padding: 15px;
   border-radius: 20px;
+  margin-bottom: 200px;
 }
 
 
@@ -526,4 +527,20 @@ button {
 .avatar {
   border-radius: 50%;
   width: 120px;
+}
+
+.bigdaddydiv2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.bigdaddydiv3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
 }
