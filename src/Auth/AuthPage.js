@@ -111,7 +111,7 @@ export default class AuthPage extends Component {
 
   render() {
     return (
-      <div className="bigdaddydiv3">
+      <div className="happy3">
       <div className="auth">
         <ReactNotification />
         <div className="center">

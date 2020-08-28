@@ -115,7 +115,11 @@ export default class FavoritesPage extends Component {
                         !this.state.favoriteIsSelected ?
                         <PlaceHolder />
                         :
-                        <DetailedFavorite detailFavorite={this.state.detailFavorite} notes={this.state.notes} handleNoteChange={e => (this.setState({notes: e.target.value}))} handleSubmit={this.handleSubmit} handleDelete={this.handleDelete}/>
+                        <DetailedFavorite 
+                        detailFavorite={this.state.detailFavorite} 
+                        notes={this.state.notes} 
+                        handleNoteChange={e => (this.setState({notes: e.target.value}))} handleSubmit={this.handleSubmit} 
+                        handleDelete={this.handleDelete}/>
                     }
                 </div>
             </div>
