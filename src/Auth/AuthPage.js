@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './auth.css';
 import {
   signIn,
   signUp
