@@ -35,9 +35,7 @@ body {
   margin-bottom: 200px;
 }
 
-
-
-.bigDaddyDiv {
+.stayCalm {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -536,7 +534,7 @@ button {
   width: 120px;
 }
 
-.bigdaddydiv2 {
+.happy2 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -544,7 +542,7 @@ button {
   width: 100%;
 }
 
-.bigdaddydiv3 {
+.happy3 {
   display: flex;
   justify-content: center;
   align-items: center;

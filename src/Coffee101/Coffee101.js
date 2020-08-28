@@ -4,7 +4,7 @@ import Footer from '../Footer.js'
 export default class Coffee101 extends Component {
     render() {
         return (
-            <div className="bigdaddydiv2">
+            <div className="happy2">
                 <h1 className='brew101Header'>Brew 101</h1>
                 <h3 className='generalInfoHeader'>The Makeup of a Good Cup of Coffee</h3>
                 <div className='generalInfo'>
