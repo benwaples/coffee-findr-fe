@@ -5,6 +5,7 @@ import {
 } from '../coffee-api.js'
 import DisplaySignIn from './DisplaySignIn.js'
 import DisplaySignUp from './DisplaySignUp.js'
+// seems like a fun component to work with!
 import ReactNotification from 'react-notifications-component'
 import { store } from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'
@@ -59,6 +60,7 @@ export default class AuthPage extends Component {
   }
 
   handleSignIn = async (e) => {
+    // super cool error handling
     try {
     e.preventDefault();
 
@@ -71,7 +73,7 @@ export default class AuthPage extends Component {
     this.props.history.push('/coffeeList')
     } catch(e) {
       return store.addNotification({
-        ...notification,
+        ...notification, // nice spread operator!
         container: 'top-right',
         type: 'warning',
         message: `${e.response.body.error}`,
@@ -123,6 +125,7 @@ export default class AuthPage extends Component {
           }
         </div>
         <div className="center">
+          {/* cool toggling! */}
           <h2 onClick={this.displaySignUp}>Sign Up</h2>
           {
             this.state.signUp && <DisplaySignUp 

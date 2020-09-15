@@ -26,27 +26,27 @@ export default class CoffeeList extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
         try {
-        this.setState({isLoading: true})
-        const data = await fetchCoffeeShops(this.state.location)
-        this.setState({filteredCoffeeShops: data.body, isLoading: false})
-        
-    } catch(e) {
-        return store.addNotification({
-            ...notification,
-            container: 'top-right',
-            type: 'danger',
-            title: 'Oops!',
-            message: `Invalid Location`,
-            animationIn: ["animated", "fadeIn"],
-            animationOut: ["animated", "fadeOut"],
-            dismiss: {        
-                duration: 2000    
+            this.setState({isLoading: true})
+            const data = await fetchCoffeeShops(this.state.location)
+            this.setState({filteredCoffeeShops: data.body, isLoading: false})
+        } catch(e) {
+            return store.addNotification({
+                ...notification,
+                container: 'top-right',
+                type: 'danger',
+                title: 'Oops!',
+                message: `Invalid Location`,
+                animationIn: ["animated", "fadeIn"],
+                animationOut: ["animated", "fadeOut"],
+                dismiss: {        
+                    duration: 2000    
             }
         });
     }
 }
    
     handleFilter = (e) => {
+        // seems like this work should probably have been done on the back-end to keep the front end more ignorant
         const newData = this.state.filteredCoffeeShops.filter(coffeeShop => (
             !coffeeShop.title.includes("Starbucks") &&
             !coffeeShop.title.includes("Dunkin") &&
@@ -72,6 +72,7 @@ export default class CoffeeList extends Component {
         });
         } catch(e) {
             return store.addNotification({
+                // starting to feel like all this notification duplication could have been prevented by making a makeNotification function with some default animations, dismiss.duration, etc
                 ...notification,
                 container: 'top-right',
                 type: 'danger',

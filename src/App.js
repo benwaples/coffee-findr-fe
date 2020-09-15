@@ -55,6 +55,7 @@ export default class App extends Component {
                     {...routerProps} />} 
               />
               <Route
+              // generally, routes paths should be in-kabob-case
                   path="/CoffeeList"
                   exact
                   render={(routerProps) => <CoffeeList

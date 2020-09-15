@@ -3,6 +3,10 @@ import Footer from '../Footer.js'
 
 export default class Coffee101 extends Component {
     render() {
+        /* 
+           instead of hard coding the HTML, it might have been cool to make a 'CoffeeInstructionItem' component and store the data as json that you map over and pump into those components:
+            coffeeInstructions.map(recipe => <CoffeeInstructionItem recipe={recipe} />)
+        */
         return (
             <div className="happy2">
                 <h1 className='brew101Header'>Brew 101</h1>
