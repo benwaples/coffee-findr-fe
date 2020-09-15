@@ -1,6 +1,7 @@
 /* eslint-disable no-throw-literal */
 import request from 'superagent';
 
+// would have liked to see this coming in from an environemtn variable
 const URL = 'https://no-stars-no-bucks.herokuapp.com'
 
 

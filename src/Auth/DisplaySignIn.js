@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 export default class DisplaySignIn extends Component {
   render() {
 
+    // nice managing of the parent state through props
     const {
       handleSignIn,
       handleSignInEmail,

@@ -112,6 +112,7 @@ export default class FavoritesPage extends Component {
                 </ul>
                 <div className='favoritesInfo'>
                     {
+                        // do you ever reset this faoriteIsSelected value, other than when deleting it? feels a bit off. Seems like this information should live in the parent component and passed as a prop?
                         !this.state.favoriteIsSelected ?
                         <PlaceHolder />
                         :

@@ -3,6 +3,7 @@ import Footer from './Footer.js'
 
 export default class AboutUs extends Component {
   render() {
+    // could have stored these as data in json, then mapped over it to make these divs programmatically instead of hard-coding them
     return (
       <>
         <h2>About Us</h2>
